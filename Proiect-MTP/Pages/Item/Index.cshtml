@@ -1,0 +1,81 @@
+﻿@page
+@model Proiect_MTP.Pages.Item.IndexModel
+
+<html>
+
+<head>
+	<script src="~/js/script.js"></script>
+	<link rel="stylesheet" href="site.css">
+	<title>Adoptii catelusi</title>
+</head>
+
+<body>
+
+	<div class="container">
+		<h1>Adoptii catelusi</h1>
+
+		@if (Model.gol == false)
+		{
+			<form method="POST">
+				<input type="text" class="form-control" name="Rasa" placeholder="Cauta dupa rasa..."></input>
+				<button type="submit" class="btn btn-primary">Search</button>
+			</form>
+
+			<h5>@Model.searchResult</h5>
+			@if (!(Model.searchResult.Length > 0))
+			{
+				<table>
+					<thead>
+						<tr>
+							<th>Nume catelus</th>
+							<th>Culoare</th>
+							<th>Rasa</th>
+							<th>Varsta</th>
+							<th>Talie</th>
+						</tr>
+					</thead>
+
+					<tbody>
+						@foreach (var item in Model.listCatelusi)
+						{
+							<tr>
+								<td>@item.nume_catelus</td>
+								<td>@item.culoare</td>
+								<td>@item.rasa</td>
+								<td>@item.varsta</td>
+								<td>@item.talie</td>
+
+								<td>
+									<a class="btn btn-primary btn-sm" href="/Item/Edit?user=@Model.user_email&id=@item.id">Editare</a>
+									
+									<button class="btn btn-danger btn-sm" onclick="showConfirmation()">Stergere</button>
+
+									<div class="confirmation-modal" id="confirmation-modal">
+										<div class="confirmation-content">
+											<h3>Esti sigur ca vrei sa stergi acest catelus?</h3>
+											<a href="/Item/Delete?user=@Model.user_email&id=@item.id"><button class="confirm-btn" onclick="deleteItem()">Da, sterge</button></a>
+											<button class="cancel-btn" onclick="hideConfirmation()">Anulare</button>
+										</div>
+									</div>
+								</td>
+							</tr>
+						}
+					</tbody>
+				</table>
+			}
+		}
+		else
+		{
+			<div>
+				<p>Tabelul tau este gol</p>
+			</div>
+		}
+
+		@if (!(Model.searchRasa.Length > 0))
+		{
+			<a class='btn btn-primary btn-sm' href="/Item/Create?user=@Model.user_email">Adauga catelusi</a>
+		}
+	</div>
+
+</body>
+</html>

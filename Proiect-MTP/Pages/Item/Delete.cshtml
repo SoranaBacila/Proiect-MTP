@@ -1,0 +1,32 @@
+﻿@page
+@using System.Data.SqlClient;
+
+@{
+    String user_email = Request.Query["user"];
+    try
+    {
+        
+        String id = Request.Query["id"];
+
+        string connectionString = "Data Source=LAPTOP-EL05O585;Initial Catalog=mtp;Integrated Security=True";
+        using (SqlConnection connection = new SqlConnection(connectionString))
+        {
+            connection.Open();
+
+            String sql = "DELETE FROM catelusi WHERE id=@id";
+
+            using (SqlCommand command = new SqlCommand(sql, connection))
+            {
+                command.Parameters.AddWithValue("@id", id);
+                command.ExecuteNonQuery();
+            }
+        }
+
+    }
+    catch(Exception e)
+    {
+
+    }
+
+    Response.Redirect("/Item/Index?user=" + user_email);
+}

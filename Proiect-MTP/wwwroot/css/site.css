@@ -1,0 +1,296 @@
+html {
+    font-size: 20px;
+    position:sticky;
+    min-height: 190%;
+}
+
+@media (min-width: 240px) {
+  html {
+    font-size: 26px;
+  }
+}
+
+.navigatie {
+    background-color: hotpink;
+}
+
+body {
+    margin-bottom: 30px;
+    font-family: 'Lucida Handwriting';
+    background-color: hotpink;
+    margin: 3;
+    padding: 4;
+}
+
+.container {
+    max-width: 2000px;
+    margin: 3 auto;
+    padding: 3px;
+    background-color: pink;
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    font-size: 90px;
+    margin-bottom: 30px;
+}
+
+h2 {
+    font-size: 24px;
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+
+p {
+    font-size: 9px;
+    line-height: 1.5;
+    margin-bottom: 12px;
+}
+
+table {
+    width: 80%;
+    border-collapse: collapse;
+    margin-top: 23px;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: bisque;
+    font-weight: bold;
+}
+
+tr:hover {
+    background-color: lightpink;
+}
+
+
+
+
+
+:root {
+    --primary-color--body: GDG68B;
+    --primary-color--container: D6H2E5;
+    --primary-color--header: SJ2F5;
+}
+
+.dark-theme {
+    --primary-color--body: beige;
+    --primary-color--container: deeppink;
+    --primary-color--header: CG76A6;
+}
+
+
+
+
+
+/* Styling for the delete button====================== */
+.delete-btn {
+    background-color: deeppink;
+    color: beige;
+    border: groove;
+    padding: 4px 8px;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+/* Styling for the confirmation modal */
+.confirmation-modal {
+    display: none;
+    position: center;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 20%;
+    height: 25%;
+    background-color: deeppink;
+}
+
+.confirmation-content {
+    background-color: beige;
+    margin: 8% auto;
+    padding: 5px;
+    border-radius: 4px;
+    width: 190%;
+    text-align: center;
+}
+
+.confirm-btn, .cancel-btn {
+    background-color: hotpink;
+    color: beige;
+    border: none;
+    padding: 10px 10px;
+    border-radius: 2px;
+    cursor: pointer;
+    margin: 10px;
+}
+
+.cancel-btn {
+    background-color: plum;
+}
+
+
+
+
+
+
+
+
+
+
+.theme-switch-wrapper {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.theme-switch {
+    display: inline-block;
+    height: 20px;
+    position: relative;
+    width: 20px;
+}
+
+    .theme-switch input {
+        display: none;
+    }
+
+.slider {
+    background-color: #ccc;
+    bottom: 0;
+    cursor: pointer;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: .4s;
+}
+
+    .slider:before {
+        background-color: peachpuff;
+        bottom: 2px;
+        content: "";
+        height: 10px;
+        left: 2px;
+        position: absolute;
+        transition: .4s;
+        width: 20px;
+    }
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+    input:checked + .slider:before {
+        transform: translateX(10px);
+    }
+
+
+
+
+
+
+a {
+    text-decoration: none;
+    color: #2a2a2a;
+}
+
+
+    a:visited {
+        text-decoration: none;
+    }
+
+
+    a:hover {
+        text-decoration: none;
+    }
+
+
+    a:active {
+        text-decoration: none;
+    }
+
+ul {
+    list-style-type: none; /* Remove bullets */
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margins */
+}
+
+
+a:hover {
+    color: #da291c;
+}
+
+
+
+.main-content {
+    padding-top: 2em;
+    padding-bottom: 2em;
+}
+
+    .main-content h2:first-child {
+        margin-top: 0;
+    }
+
+
+
+
+* {
+    box-sizing: border-box
+}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+    width:47%;
+    padding: 35px;
+    margin: 7px 0 19px 0;
+    display: inline-grid;
+    border: none;
+    background: lightpink;
+}
+
+    input[type=text]:focus, input[type=password]:focus {
+        background-color: fuchsia;
+        outline: none;
+    }
+
+/* Overwrite default styles of hr */
+hr {
+    border: 1px solid #ea8787;
+    margin-bottom: 25px;
+}
+
+/* Set a style for the submit/register button */
+.registerbtn {
+    background-color: plum;
+    color: white;
+    padding: 25px 38px;
+    margin: 12px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+}
+
+    .registerbtn:hover {
+        opacity: 1;
+    }
+
+/* Add a blue text color to links */
+a {
+    color: darkslategrey;
+}
+
+/* Set a grey background color and center the text of the "sign in" section */
+.signin {
+    background-color: lightpink;
+    text-align: right;
+}

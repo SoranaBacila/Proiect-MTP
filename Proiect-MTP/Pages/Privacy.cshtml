@@ -1,0 +1,223 @@
+﻿@page
+@model PrivacyModel
+@{
+    ViewData["Title"] = "Privacy Policy";
+}
+
+<html>
+<head>
+	<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TNS3H5HW9S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-TNS3H5HW9S');
+</script>
+	
+	<link rel="stylesheet" href="site.css">
+	<title>Car Engines</title>
+
+
+</head>
+<body>
+	<h1>Engines of the Week</h1>
+	<div class="container">
+
+		<ul id="car-list">
+
+			<li data-clicks="0">
+				<a href="#" id="n55">
+					<div class="engine" id="n55-engine">
+						<h2>N55 - BMW</h2>
+						<p>The N55 is a turbocharged inline six-cylinder engine produced by BMW from 2009-2018. It produces around 300 horsepower and 300 lb-ft of torque, and was made with a combination of aluminum and iron materials. It is known for its smooth power delivery and high efficiency.</p>
+						<p>Clicked: <span id="click_n55">0</span> times</p>
+					</div>
+				</a>
+			</li>
+
+			
+			<li data-clicks="0">
+				<a href="#" id="lt5">
+					<div class="engine" id="lt5-engine">
+						<h2>LT5 - Chevrolet</h2>
+						<p>The LT5 is a supercharged V8 engine produced by Chevrolet from 1990-1995. It produces around 405 horsepower and 385 lb-ft of torque, and was made with aluminum materials. It was used in the Chevrolet Corvette ZR1 and was known for its high performance and reliability.</p>
+						<p>Clicked: <span id="click_lt5">0</span> times</p>
+					</div>
+				</a>
+			</li>
+
+			<li data-clicks="0">
+				<a href="#" id="jz">
+					<div class="engine" id="2j-engine">
+						<h2>2JZ-GTE - Toyota</h2>
+						<p>The 2JZ-GTE is a twin-turbocharged inline six-cylinder engine produced by Toyota from 1991-2002. It produces around 320 horsepower and 315 lb-ft of torque, and was made with cast iron materials. It was used in the Toyota Supra and was known for its high power output and durability.</p>
+						<p>Clicked: <span id="click_2jz">0</span> times</p>
+					</div>
+				</a>
+			</li>
+
+			<li data-clicks="0">
+				<a href="#" id="b18c">
+					<div class="engine" id="b18c-engine">
+						<h2>B18C - Honda</h2>
+						<p>The B18C is a four-cylinder engine produced by Honda from 1995-2001. It produces around 200 horsepower and 130 lb-ft of torque, and was made with aluminum materials. It was used in the Acura Integra Type R and was known for its high-revving capability and strong power delivery.</p>
+						<p>Clicked: <span id="click_b18c">0</span> times</p>
+					</div>
+				</a>
+			</li>
+			
+			<li data-clicks="0">
+				<a href="#" id="ls7">
+					<div class="engine" id="ls7-engine">
+						<h2>LS7 - General Motors</h2>
+						<p>The LS7 is a naturally aspirated V8 engine produced by General Motors from 2005-2014. It produces around 505 horsepower and 470 lb-ft of torque, and was made with aluminum materials. It was used in the Chevrolet Corvette Z06 and was known for its high performance and reliability.</p>
+						<p>Clicked: <span id="click_ls7">0</span> times</p>
+					</div>
+				</a>
+			</li>
+
+		</ul>
+	</div>
+
+
+	<script>
+
+		/********************* */
+		var li_n55 = document.querySelector("#n55").parentNode;
+		var link_n55 = document.getElementById('n55');
+		var count_n55 = document.getElementById('click_n55');
+		var clicks_n55 = 0;
+
+		link_n55.addEventListener('click', function () {
+			clicks_n55++;
+			count_n55.innerHTML = clicks_n55;
+			li_n55.setAttribute("data-clicks", clicks_n55);
+			sort();
+		});
+
+
+		/********************* */
+		var li_lt5 = document.querySelector("#lt5").parentNode;
+		var link_lt5 = document.getElementById('lt5');
+		var count_lt5 = document.getElementById('click_lt5');
+		var clicks_lt5 = 0;
+
+		link_lt5.addEventListener('click', function () {
+			clicks_lt5++;
+			count_lt5.innerHTML = clicks_lt5;
+			li_lt5.setAttribute("data-clicks", clicks_lt5);
+			sort();
+		});
+
+
+		/********************* */
+		var li_2jz = document.querySelector("#jz").parentNode;
+		var link_2jz = document.getElementById('jz');
+		var count_2jz = document.getElementById('click_2jz');
+		var clicks_2jz = 0;
+
+		link_2jz.addEventListener('click', function () {
+			clicks_2jz++;
+			count_2jz.innerHTML = clicks_2jz;
+			li_2jz.setAttribute("data-clicks", clicks_2jz);
+			sort();
+		});
+
+
+		/********************* */
+		var li_b18c = document.querySelector("#b18c").parentNode;
+		var link_b18c = document.getElementById('b18c');
+		var count_b18c = document.getElementById('click_b18c');
+		var clicks_b18c = 0;
+
+		link_b18c.addEventListener('click', function () {
+			clicks_b18c++;
+			count_b18c.innerHTML = clicks_b18c;
+			li_b18c.setAttribute("data-clicks", clicks_b18c);
+			sort();
+		});
+
+
+		/********************* */
+		var li_ls7 = document.querySelector("#ls7").parentNode;
+		var link_ls7 = document.getElementById('ls7');
+		var count_ls7 = document.getElementById('click_ls7');
+		var clicks_ls7 = 0;
+
+		link_ls7.addEventListener('click', function () {
+			clicks_ls7++;
+			count_ls7.innerHTML = clicks_ls7;
+			li_ls7.setAttribute("data-clicks", clicks_ls7);
+			sort();
+		});
+
+
+
+
+
+
+		/********************* */
+		document.getElementById("n55").addEventListener("click", function (event) {
+			event.preventDefault(); // Prevents the default behavior of the link
+			// Add your custom code here
+		});
+
+		document.getElementById("lt5").addEventListener("click", function (event) {
+			event.preventDefault(); // Prevents the default behavior of the link
+			// Add your custom code here
+		});
+
+		document.getElementById("jz").addEventListener("click", function (event) {
+			event.preventDefault(); // Prevents the default behavior of the link
+			// Add your custom code here
+		});
+
+		document.getElementById("b18c").addEventListener("click", function (event) {
+			event.preventDefault(); // Prevents the default behavior of the link
+			// Add your custom code here
+		});
+
+		document.getElementById("ls7").addEventListener("click", function (event) {
+			event.preventDefault(); // Prevents the default behavior of the link
+			// Add your custom code here
+		});
+
+
+
+
+		
+		function sort() {
+			var list, i, switching, shouldSwitch;
+			list = document.getElementById("car-list");
+			switching = true;
+			while (switching) {
+				switching = false;
+				b = list.getElementsByTagName("li");
+				for (i = 0; i < b.length - 1; i++) {
+					shouldSwitch = false;
+					var clicks1 = Number(b[i].getAttribute("data-clicks"));
+					var clicks2 = Number(b[i + 1].getAttribute("data-clicks"));
+					if (clicks1 < clicks2) {
+						shouldSwitch = true;
+						break;
+					}
+				}
+				if (shouldSwitch) {
+					b[i].parentNode.insertBefore(b[i + 1], b[i]);
+					switching = true;
+				}
+			}
+		}
+		
+
+
+
+
+	</script>
+
+
+
+</body>
+</html>

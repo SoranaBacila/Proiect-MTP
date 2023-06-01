@@ -1,0 +1,78 @@
+﻿@page
+@model Proiect_MTP.Pages.Item.CreateModel
+@{
+}
+
+<head>
+	<h3>Adauga catelusi</h3>
+    <link rel="stylesheet" href="site.css">
+</head>
+
+@if (Model.errorMessage.Length > 0)
+{
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong>@Model.errorMessage</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>    
+}
+
+<div class="container">
+<form method="POST">
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Nume catelus</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="Nume_catelus" value="@Model.catelusiInfo.nume_catelus" placeholder="Nume catelus">
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Culoare</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="Culoare" value="@Model.catelusiInfo.culoare" placeholder="Culoare">
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Rasa</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="Rasa" value="@Model.catelusiInfo.rasa" placeholder="Rasa">
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Varsta</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="Varsta" value="@Model.catelusiInfo.varsta" placeholder="Varsta">
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Talie</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="Talie" value="@Model.catelusiInfo.talie" placeholder="Talie">
+        </div>
+    </div>
+
+
+    @if (Model.succesMessage.Length > 0)
+    {
+        <div class="row mb-3">
+            <div class="col-sm-9">
+                <div class="alert alert-succes alert-dismissible fade show" role="alert">
+                    <strong>@Model.succesMessage</strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            </div>
+        </div>    
+    }
+
+    <div class="row mb-3">
+        <div class="offset-sm-3 col-sm-3 d-grid">
+            <button type="submit" class="btn btn-primary">Adauga</button>
+        </div>
+        <div class="col-sm-3 d-grid">
+            <a class="btn btn-outline-primary" href="/Item/Index?user=@Model.user_email" role="button">Anulare</a>
+        </div>
+    </div>
+</form>
+</div>

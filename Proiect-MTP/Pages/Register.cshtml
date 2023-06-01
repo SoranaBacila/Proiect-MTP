@@ -1,0 +1,164 @@
+﻿@page
+@model Proiect_MTP.Pages.RegisterModel
+@{
+    Layout = null;
+}
+
+<head>
+    <style>
+
+        * {
+            box-sizing: border-box
+        }
+
+        /* Full-width input fields */
+        input[type=text], input[type=password] {
+            width: 100%;
+            padding: 15px;
+            margin: 5px 0 22px 0;
+            display: inline-block;
+            border: none;
+            background: beige
+
+            ;
+        }
+
+            input[type=text]:focus, input[type=password]:focus {
+                background-color: #ddd;
+                outline: none;
+            }
+
+        /* Overwrite default styles of hr */
+        hr {
+            border: 1px solid deeppink;
+            margin-bottom: 25px;
+        }
+
+        /* Set a style for the submit/register button */
+        .registerbtn {
+            background-color: deeppink;
+            color: beige;
+            padding: 16px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            opacity: 0.9;
+        }
+
+            .registerbtn:hover {
+                opacity: 1;
+            }
+
+        /* Add a blue text color to links */
+        a {
+            color: deeppink;
+        }
+
+        /* Set a grey background color and center the text of the "sign in" section */
+        .signin {
+            background-color: lightpink;
+            text-align: center;
+        }
+
+        body {
+            font-family: 'Times New Roman';
+            background-color: lightpink;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: pink;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            font-size: 24px;
+            margin-top: 50px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+
+        #alert-message {
+            display: none;
+            background-color: #f44336;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            font-size: 16px;
+        }
+
+            #alert-message p {
+                margin: 0;
+            }
+
+            #alert-message.show {
+                display: block;
+            }
+
+    </style>
+</head>
+
+<body>
+<form method="POST">
+    <div class="container">
+
+        <h1>BINE AI VENIT</h1>
+        <p>Completeaza aceste campuri pentru a crea un CONT NOU.</p>
+        <hr>
+
+        @if (Model.errorMessage.Length > 0)
+        {
+            <div id="alert-message">
+                <p>@Model.errorMessage</p>
+            </div>
+        }
+
+        <label for="name"><b>Numele dvs:</b></label>
+        <input type="text" placeholder="Introduceti numele dvs" name="nume" id="nume" required>
+
+        <label for="email"><b>Adresa de email:</b></label>
+        <input type="text" placeholder="Introduceti adresa de email" name="email" id="email" required>
+
+        <label for="psw"><b>Parola dvs:</b></label>
+        <input type="password" placeholder="Introduceti parola" name="parola" id="parola" required>
+
+        <label for="rptpsw"><b>Confirmarea parolei:</b></label>
+        <input type="password" placeholder="Introduceti din nou parola dvs" name="rpt_parola" id="rpt_parola" required>
+
+        <hr>
+
+        @if (Model.errorMessage.Length > 0)
+        {
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                   <strong>@Model.errorMessage</strong>
+
+             </div>
+        }
+
+        <button type="submit" class="registerbtn">Creare cont</button>
+    </div>
+
+    <div class="container signin">
+        <p>Ai deja un cont la noi? <a href="Login">Apasa aici pentru a te conecta</a>.</p>
+    </div>
+</form>
+</body>
+
+
